@@ -1,6 +1,6 @@
 # Kirby Memo
 
-Une page d'aide-mémoire dans le Panel de Kirby 5. Elle affiche en lecture seule un fichier Markdown du site, versionné dans git : les commandes, les paramètres d'URL, les astuces faciles à oublier. Ces notes ne sont pas du contenu, elles n'ont rien à faire dans un champ.
+Une page d'aide-mémoire dans le Panel de Kirby 5 et 6. Elle affiche en lecture seule un fichier Markdown du site, versionné dans git : les commandes, les paramètres d'URL, les astuces faciles à oublier. Ces notes ne sont pas du contenu, elles n'ont rien à faire dans un champ.
 
 Le plugin fonctionne sur un site classique comme sur un backend headless, et avec `panel.vue.compiler = false` : `index.js` est précompilé.
 

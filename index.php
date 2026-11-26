@@ -38,9 +38,6 @@ function sections(string $text): array
 }
 
 Kirby::plugin('rllngr/kirby-memo', [
-    'info' => [
-        'version' => '1.0.0',
-    ],
     'options' => [
         'file'   => 'memo.md',
         'access' => true,
