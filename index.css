@@ -4,7 +4,7 @@
  * Clair / sombre : light-dark() suit le `color-scheme` du Panel.
  */
 
-.k-memo-view {
+.k-memozer-view {
   --m-cream: #faf5ef;
   --m-ink: #1a1a1a;
   --m-blue: #3264f9;
@@ -24,11 +24,11 @@
   --m-mono: ui-monospace, Consolas, monospace;
 }
 
-.k-memo-view .k-panel-main {
+.k-memozer-view .k-panel-main {
   background: var(--m-bg);
 }
 
-.k-memo {
+.k-memozer {
   display: grid;
   gap: var(--m-gutter);
   font-family: var(--m-sans);
@@ -37,18 +37,18 @@
   line-height: 1.5;
   color: var(--m-text);
 }
-.k-memo *,
-.k-memo *::before,
-.k-memo *::after {
+.k-memozer *,
+.k-memozer *::before,
+.k-memozer *::after {
   border-radius: 0;
 }
-.k-memo :focus,
-.k-memo :focus-visible {
+.k-memozer :focus,
+.k-memozer :focus-visible {
   outline: none;
 }
 
 /* ── Barre d'encre ──────────────────────────────── */
-.k-memo-ink {
+.k-memozer-ink {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,102 +60,102 @@
   color: var(--m-bar-text);
   text-transform: lowercase;
 }
-.k-memo-ink h1 {
+.k-memozer-ink h1 {
   font-size: inherit;
   font-weight: 400;
 }
-.k-memo-ink code {
+.k-memozer-ink code {
   font-family: inherit;
   color: color-mix(in srgb, var(--m-bar-text) 60%, var(--m-bar-bg));
   text-transform: none;
 }
 
 /* ── Blocs ──────────────────────────────────────── */
-.k-memo-block {
+.k-memozer-block {
   min-width: 0;
   padding: 1.25rem 1.5rem;
   background: var(--m-surface);
 }
-.k-memo-message {
+.k-memozer-message {
   padding: 3rem 1.5rem;
   color: var(--m-muted);
   text-align: center;
 }
 
 /* ── Markdown rendu ─────────────────────────────── */
-.k-memo-text > * {
+.k-memozer-text > * {
   max-width: 48rem;
 }
-.k-memo-text > * + * {
+.k-memozer-text > * + * {
   margin-top: 0.75rem;
 }
-.k-memo-text h1,
-.k-memo-text h2,
-.k-memo-text h3,
-.k-memo-text h4,
-.k-memo-text h5,
-.k-memo-text h6 {
+.k-memozer-text h1,
+.k-memozer-text h2,
+.k-memozer-text h3,
+.k-memozer-text h4,
+.k-memozer-text h5,
+.k-memozer-text h6 {
   font-size: inherit;
   font-weight: 400;
 }
-.k-memo-text h1 {
+.k-memozer-text h1 {
   font-size: 1.6rem;
   line-height: 1.2;
 }
-.k-memo-text h2 {
+.k-memozer-text h2 {
   font-size: 1.25rem;
   line-height: 1.25;
 }
-.k-memo-text h3 {
+.k-memozer-text h3 {
   color: var(--m-muted);
   text-transform: lowercase;
 }
-.k-memo-text * + h2,
-.k-memo-text * + h3,
-.k-memo-text * + h4 {
+.k-memozer-text * + h2,
+.k-memozer-text * + h3,
+.k-memozer-text * + h4 {
   margin-top: 1.5rem;
 }
-.k-memo-text h4,
-.k-memo-text strong,
-.k-memo-text b {
+.k-memozer-text h4,
+.k-memozer-text strong,
+.k-memozer-text b {
   font-weight: 600;
 }
-.k-memo-text em,
-.k-memo-text i {
+.k-memozer-text em,
+.k-memozer-text i {
   font-style: italic;
 }
-.k-memo-text a {
+.k-memozer-text a {
   color: var(--m-accent);
   text-decoration: underline;
   text-underline-offset: 0.15em;
 }
-.k-memo-text ul,
-.k-memo-text ol {
+.k-memozer-text ul,
+.k-memozer-text ol {
   padding-left: 1.25rem;
 }
-.k-memo-text ul {
+.k-memozer-text ul {
   list-style: disc;
 }
-.k-memo-text ol {
+.k-memozer-text ol {
   list-style: decimal;
 }
-.k-memo-text li + li,
-.k-memo-text li > ul,
-.k-memo-text li > ol {
+.k-memozer-text li + li,
+.k-memozer-text li > ul,
+.k-memozer-text li > ol {
   margin-top: 0.25rem;
 }
-.k-memo-text blockquote {
+.k-memozer-text blockquote {
   padding-left: 1rem;
   border-left: 2px solid var(--m-text);
   color: var(--m-muted);
 }
-.k-memo-text hr {
+.k-memozer-text hr {
   height: 0;
   margin-block: 1.5rem;
   border: 0;
   border-top: 1px solid var(--m-code);
 }
-.k-memo-text code {
+.k-memozer-text code {
   /* Reste d'un seul tenant : `--measure` ne se coupe pas après ses tirets */
   display: inline-block;
   max-width: 100%;
@@ -165,37 +165,37 @@
   font-size: 0.88em;
   overflow-wrap: anywhere;
 }
-.k-memo-text pre {
+.k-memozer-text pre {
   padding: 0.75rem 1rem;
   background: var(--m-code);
   overflow-x: auto;
 }
-.k-memo-text pre code {
+.k-memozer-text pre code {
   padding: 0;
   background: none;
   line-height: 1.5;
   overflow-wrap: normal;
 }
-.k-memo-text table {
+.k-memozer-text table {
   width: 100%;
   border-collapse: collapse;
 }
-.k-memo-text th,
-.k-memo-text td {
+.k-memozer-text th,
+.k-memozer-text td {
   padding: 0.4rem 0.75rem 0.4rem 0;
   border-bottom: 1px solid var(--m-code);
   font-weight: 400;
   text-align: left;
   vertical-align: top;
 }
-.k-memo-text th {
+.k-memozer-text th {
   color: var(--m-muted);
   text-transform: lowercase;
 }
 
 /*
  * Menu : Kirby pousse le groupe du bas avec un margin-bottom:auto sur l'avant-dernier groupe.
- * Quand le site termine `panel.menu` par '-', 'memo', cet avant-dernier groupe est le mémo :
+ * Quand le site termine `panel.menu` par '-', 'memozer', cet avant-dernier groupe est le mémo :
  * la marge passe au groupe d'avant, et le mémo vient se coller juste au-dessus de « Modifications ».
  */
 .k-panel-menu-buttons:has(+ .k-panel-menu-buttons[data-second-last="true"] > :is(a[href="memo"], a[href$="/memo"])) {

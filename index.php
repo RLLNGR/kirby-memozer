@@ -1,24 +1,24 @@
 <?php
 
-namespace Rllngr\KirbyMemo;
+namespace Rllngr\KirbyMemozer;
 
 use Kirby\Cms\App as Kirby;
 use Kirby\Exception\PermissionException;
 use Kirby\Filesystem\F;
 
-/** `rllngr.kirby-memo.access` = true (tous), false (personne) ou une liste de rôles */
+/** `rllngr.kirby-memozer.access` = true (tous), false (personne) ou une liste de rôles */
 function access(): bool
 {
     $user   = kirby()->user();
-    $option = option('rllngr.kirby-memo.access', true);
+    $option = option('rllngr.kirby-memozer.access', true);
     if (!$user || $option === false) return false;
     return $option === true || in_array($user->role()->name(), (array) $option, true);
 }
 
-/** `rllngr.kirby-memo.file` : chemin absolu, ou relatif au dossier `site` */
+/** `rllngr.kirby-memozer.file` : chemin absolu, ou relatif au dossier `site` */
 function root(): string
 {
-    $file = option('rllngr.kirby-memo.file', 'memo.md');
+    $file = option('rllngr.kirby-memozer.file', 'memo.md');
     if (preg_match('#^(/|[a-zA-Z]:[\\\\/])#', $file)) return $file;
     return kirby()->root('site') . '/' . $file;
 }
@@ -37,14 +37,14 @@ function sections(string $text): array
     return array_values(array_filter(array_map('trim', preg_split('/(?=<h2[\s>])/', $html))));
 }
 
-Kirby::plugin('rllngr/kirby-memo', [
+Kirby::plugin('rllngr/kirby-memozer', [
     'options' => [
         'file'   => 'memo.md',
         'access' => true,
     ],
     'areas' => [
-        'memo' => fn () => [
-            'label' => t('memo.title'),
+        'memozer' => fn () => [
+            'label' => t('memozer.title'),
             'icon'  => 'book',
             'menu'  => access(),
             'link'  => 'memo',
@@ -53,13 +53,13 @@ Kirby::plugin('rllngr/kirby-memo', [
                     'pattern' => 'memo',
                     'action'  => function () {
                         if (!access()) {
-                            throw new PermissionException(t('memo.forbidden'));
+                            throw new PermissionException(t('memozer.forbidden'));
                         }
                         $root = root();
                         $text = is_file($root) && is_readable($root) ? F::read($root) : null;
                         return [
-                            'component' => 'k-memo-view',
-                            'title'     => t('memo.title'),
+                            'component' => 'k-memozer-view',
+                            'title'     => t('memozer.title'),
                             'props'     => [
                                 'file'     => label($root),
                                 'exists'   => $text !== null,

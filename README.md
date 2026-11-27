@@ -1,4 +1,4 @@
-# Kirby Memo
+# Kirby Memozer
 
 Une page d'aide-mémoire dans le Panel de Kirby 5 et 6. Elle affiche en lecture seule un fichier Markdown du site, versionné dans git : les commandes, les paramètres d'URL, les astuces faciles à oublier. Ces notes ne sont pas du contenu, elles n'ont rien à faire dans un champ.
 
@@ -7,10 +7,10 @@ Le plugin fonctionne sur un site classique comme sur un backend headless, et ave
 ## Installation
 
 ```bash
-composer require rllngr/kirby-memo
+composer require rllngr/kirby-memozer
 ```
 
-Ou copiez le dossier dans `site/plugins/kirby-memo`.
+Ou copiez le dossier dans `site/plugins/kirby-memozer`.
 
 ## Utilisation
 
@@ -28,7 +28,7 @@ return [
             'system',
             // … vos autres zones
             '-',
-            'memo',
+            'memozer',
         ],
     ],
 ];
@@ -41,7 +41,7 @@ Sans `panel.menu`, le mémo apparaît à la suite des autres zones, en haut du m
 ## Options
 
 ```php
-'rllngr.kirby-memo' => [
+'rllngr.kirby-memozer' => [
     // Chemin absolu, ou relatif au dossier site
     'file'   => 'memo.md',
     // true (tous), false (personne) ou une liste de rôles
